@@ -1,0 +1,25 @@
+{
+  "name": "@speedster/cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "speedster": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.11.0",
+    "chalk": "^4.1.2",
+    "commander": "^14.0.0",
+    "figlet": "^1.8.2",
+    "ora": "^5.4.1"
+  }
+}
