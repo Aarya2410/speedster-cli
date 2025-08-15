@@ -9,14 +9,17 @@
             background-color: #1a1a1a;
             color: #f0f0f0;
             font-family: monospace;
+            margin: 0;
+        }
+        .hero {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
+            text-align: center;
         }
         .container {
-            text-align: center;
             border: 1px solid #444;
             padding: 40px;
             border-radius: 8px;
@@ -25,25 +28,153 @@
             font-size: 3em;
             margin-bottom: 20px;
         }
-        .curl-command {
+        .curl-command-container {
+            display: flex;
+            align-items: center;
             background-color: #333;
-            padding: 20px;
+            padding: 10px 20px;
             border-radius: 5px;
             font-size: 1.2em;
+        }
+        .curl-command {
             display: inline-block;
+            margin-right: 20px;
         }
         .curl-command span {
             color: #6cff6c;
         }
+        .copy-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .copy-button:hover {
+            background-color: #45a049;
+        }
+        .features {
+            background-color: #222;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .features h2 {
+            font-size: 2.5em;
+            margin-bottom: 60px;
+        }
+        .features-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        .feature {
+            background-color: #333;
+            padding: 40px;
+            border-radius: 8px;
+            width: 250px;
+            transition: transform 0.3s;
+        }
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        .feature h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        .feature p {
+            font-size: 1.1em;
+            color: #aaa;
+        }
+        .contributors {
+            background-color: #1a1a1a;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .contributors h2 {
+            font-size: 2.5em;
+            margin-bottom: 60px;
+        }
+        .contributors-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        .contributor img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        .contributor img:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Speedster CLI</h1>
-        <p>The fastest way to check your internet speed.</p>
-        <div class="curl-command">
-            <span>$</span> curl -sSL https://aarya2410.github.io/speedster-cli/install.sh | sh
+    <div class="hero">
+        <div class="container">
+            <h1>Speedster CLI</h1>
+            <p>The fastest way to check your internet speed.</p>
+            <div class="curl-command-container">
+                <div class="curl-command" id="curl-command">
+                    <span>$</span> curl -sSL https://aarya2410.github.io/speedster-cli/install.sh | sh
+                </div>
+                <button class="copy-button" onclick="copyCommand()">Copy</button>
+            </div>
         </div>
     </div>
+
+    <div class="features">
+        <h2>Features</h2>
+        <div class="features-container">
+            <div class="feature">
+                <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                <h3>Ping Test</h3>
+                <p>Check the latency of your connection.</p>
+            </div>
+            <div class="feature">
+                <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <h3>Download Speed</h3>
+                <p>Measure how fast you can download files.</p>
+            </div>
+            <div class="feature">
+                <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                <h3>Upload Speed</h3>
+                <p>Measure how fast you can upload files.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contributors">
+        <h2>Contributors</h2>
+        <div class="contributors-container">
+            <div class="contributor">
+                <a href="https://github.com/parthkapoor-dev" target="_blank"><img src="https://github.com/parthkapoor-dev.png" alt="Parth Kapoor"></a>
+            </div>
+            <div class="contributor">
+                <a href="https://github.com/Aarya2410" target="_blank"><img src="https://github.com/Aarya2410.png" alt="Aarya Aggarwal"></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyCommand() {
+            const commandText = document.getElementById('curl-command').innerText.replace('$ ', '');
+            navigator.clipboard.writeText(commandText).then(() => {
+                const copyButton = document.querySelector('.copy-button');
+                copyButton.innerText = 'Copied!';
+                setTimeout(() => {
+                    copyButton.innerText = 'Copy';
+                }, 2000);
+            });
+        }
+    </script>
 </body>
 </html>
