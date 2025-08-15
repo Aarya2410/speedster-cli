@@ -41,6 +41,23 @@ The `docs` package contains the project's documentation, which is a simple HTML 
 *   **HTML/CSS:** For creating the documentation page.
 *   **Serve:** A simple HTTP server for serving the documentation locally.
 
+## Installation
+
+To install the Speedster CLI, run the following command in your terminal:
+
+```bash
+curl -sSL https://aarya2410.github.io/speedster-cli/install.sh | sh
+```
+
+This will download and execute the installation script, which will:
+
+1.  Check for Node.js and npm.
+2.  Clone the Speedster repository to `~/.speedster-cli`.
+3.  Install the required dependencies.
+4.  Create a symbolic link to the `speedster` executable in `/usr/local/bin`.
+
+After the installation is complete, you can run the `speedster` command from anywhere in your terminal.
+
 ## Domain Name
 
 The project's domain name is `speedster.com`, as specified in the `CNAME` file.
